@@ -279,6 +279,9 @@ main .mobile-success > .content > p {
   line-height: 150%;
   font-weight: 400;
 }
+main .mobile-success > .content > p > .email-feedback {
+  font-weight: 700;
+}
 main .mobile-success > button {
   align-self: flex-end;
   background-color: #242742;

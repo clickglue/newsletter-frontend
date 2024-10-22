@@ -197,7 +197,12 @@ main {
         font-size: 1rem;
         line-height: 150%;
         font-weight: 400;
+
+        > .email-feedback{
+          font-weight: 700;
+        }
       }
+
     }
     > button {
       align-self: flex-end;
