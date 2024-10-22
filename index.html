@@ -12,27 +12,52 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="index.css" />
+    <script src="./script.js" defer></script>
 
     <title>Newsletter</title>
   </head>
   <body>
     <!-- Sign-up form start -->
     <main>
-      <img
-        src="./public/assets/images/illustration-sign-up-mobile.svg"
-        alt="Illustratie Desktop"
-      />
-      <section>
+      <section class="mobile" id="mobile">
+        <picture>
+          <source srcSet="./public/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 768px)" />
+          <img src="./public/assets/images/illustration-sign-up-mobile.svg" alt="Illustration for mobile" />
+        </picture>
+      <div class="content">
         <h1>Stay updated!</h1>
         <p>
-          Join 60,000+ product managers receiving monthly updates on: Product
-          discovery and building what matters Measuring to ensure updates are a
-          success And much more!
+          Join 60,000+ product managers receiving monthly updates on: 
+          <div class="list">
+            <img src="./public/assets/images/icon-list.svg" alt="list icon">
+          <p>Product discovery and building what matters </p>
+          <img src="./public/assets/images/icon-list.svg" alt="list icon">
+          <p>Measuring to ensure updates are a
+          success </p>
+          <img src="./public/assets/images/icon-list.svg" alt="list icon">
+          <p>And much more!</p>
+        </div>
         </p>
-      </section>
-      <input type="text" />
-      Email address email@company.com
-      <button>Subscribe to monthly newsletter</button>
+      <div class="email-messages">
+      <h2 class="standard">Email address </h2>
+      <h2 class="error-message" id="error-message">Valid email required</h2>
+    </div>
+      <input type="email" class="" id="input" placeholder="email@company.com" >
+      <button id="submit"><h3>Subscribe to monthly newsletter</h3></button>
+      </div>
+    </section>
+    <section class="mobile-success" id="mobile-success">
+      <div class="content">
+      <img src="./public/assets/images/icon-success.svg" alt="Succes!">
+      <h1>Thanks for subscribing!</h1>
+      <p>
+      A confirmation email has been sent to <strong>ash@loremcompany.com</strong>. 
+      Please open it and click the button inside to confirm your subscription.</p>
+    </div>
+      <button id="dismiss"> 
+      <h3>Dismiss message</h3>
+    </button>
+    </section>
     </main>
 
     <!-- Sign-up form end -->
@@ -47,5 +72,6 @@
   Dismiss message
 -->
     <!-- Success message end -->
+    
   </body>
 </html>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .hidden {
   display: none !important;
 }
@@ -83,28 +83,9 @@ button:where(:hover, :focus) {
   cursor: pointer;
 }
 
-:export {
-  thresholdWidth: 72rem;
-}
-
-:root {
-  --mobile-section-width: 20.44rem;
-  font-family: "Red Hat Text", sans-serif;
-  font-optical-sizing: auto;
-  --red: hsl(14, 86%, 42%);
-  --green: hsl(159, 69%, 38%);
-  --rose-50: hsl(20, 50%, 98%);
-  --rose-100: hsl(13, 31%, 94%);
-  --rose-300: hsl(14, 25%, 72%);
-  --rose-400: hsl(7, 20%, 60%);
-  --rose-500: hsl(12, 20%, 44%);
-  --rose-900: hsl(14, 65%, 9%);
-  --orange-button-color: #cc3300;
-  --ordered-dessert-bgcolor: var(--rose-50);
-}
-
 html {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
+  font-family: "Roboto";
 }
 
 body {
@@ -112,15 +93,209 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 0rem;
 }
 
 main {
   background-color: white;
+  display: flex;
+}
+@media (min-width: 768px) {
+  main {
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+}
+main > .mobile {
+  display: flex;
   width: 375px;
+  flex-direction: column;
+}
+main > .mobile.success {
+  display: none;
+}
+@media (min-width: 768px) {
+  main > .mobile {
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    width: 928px;
+    border-radius: 1rem;
+  }
+}
+main > .mobile > .content {
+  padding: 1.5rem;
+  color: #242742;
+  line-height: 150%;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  main > .mobile > .content {
+    align-self: center;
+    margin-left: 3rem;
+    width: 420px;
+  }
+}
+main > .mobile > .content > h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  main > .mobile > .content > h1 {
+    font-size: 3.25rem;
+  }
+}
+main > .mobile > .content > p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+main > .mobile > .content .list {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: auto auto;
+  gap: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  main > .mobile > .content .list {
+    gap: 0.5rem;
+  }
+}
+main > .mobile > .content > .email-messages {
+  display: flex;
+  justify-content: space-between;
+}
+main > .mobile > .content > .email-messages > .standard {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+main > .mobile > .content > .email-messages > .error-message {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff6155;
+}
+main > .mobile > .content > .email-messages > .error-message.error {
+  display: block;
+}
+main > .mobile > .content > input {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgba(25, 24, 43, 0.2666666667);
+  padding: 1rem;
+}
+main > .mobile > .content > input:hover {
+  border-color: #19182b;
+  cursor: pointer;
+}
+main > .mobile > .content > input:hover::placeholder {
+  opacity: 1;
+  color: #19182b;
+}
+main > .mobile > .content > input::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+main > .mobile > .content > input.error {
+  border-color: #ff6155;
+  border-width: 2px;
+  background-color: rgba(255, 97, 85, 0.0666666667);
+  border-style: solid;
+}
+main > .mobile > .content > input.error::placeholder {
+  color: #ff6155;
+}
+main > .mobile > .content > button {
+  background-color: #242742;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: none;
+  margin-top: 1.5rem;
+}
+main > .mobile > .content > button:hover {
+  background-image: linear-gradient(#ff6a3a, #ff527b);
+  box-shadow: 0px 15px 3rem rgba(0, 0, 0, 0.2666666667);
+}
+main > .mobile > .content > button > h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+main .mobile-success {
+  display: none;
+  width: 375px;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+main .mobile-success.success {
+  display: flex;
+}
+@media (min-width: 768px) {
+  main .mobile-success {
+    width: 504px;
+    height: 520px;
+    padding: 1rem;
+  }
+}
+main .mobile-success > .content {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+@media (min-width: 768px) {
+  main .mobile-success > .content {
+    margin: 1rem 2rem 2rem 1rem;
+  }
+}
+main .mobile-success > .content > img {
+  width: 4rem;
+  height: 4rem;
+}
+main .mobile-success > .content > h1 {
+  margin-top: 2rem;
+  color: #242742;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  main .mobile-success > .content > h1 {
+    margin-top: 2rem;
+    font-size: 3.5rem;
+  }
+}
+main .mobile-success > .content > p {
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 400;
+}
+main .mobile-success > button {
+  align-self: flex-end;
+  background-color: #242742;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: none;
+  margin-top: 4rem;
+}
+main .mobile-success > button:hover {
+  background-image: linear-gradient(#ff6a3a, #ff527b);
+  box-shadow: 0px 15px 3rem rgba(0, 0, 0, 0.2666666667);
+}
+main .mobile-success > button > h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=index.css.map */

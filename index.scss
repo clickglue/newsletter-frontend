@@ -1,18 +1,223 @@
 @use "./styles/helpers";
 @use "./styles/reset";
-@use "./styles/vars";
+@use "./styles/vars" as vars;
 
-html{
-    background-color: #1E1E1E;
+html {
+  background-color: #1e1e1e;
+  font-family: "Roboto";
 }
-body{
-    @include helpers.absolute-centered();
+body {
+  @include helpers.absolute-centered();
+  margin-top: 0rem;
 }
-main{
-    background-color: white;
+main {
+  background-color: white;
+  display: flex;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  > .mobile {
+    display: flex; //switch input/success
     width: 375px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    &.success{
+      display: none;
+    }
+
+    @media (min-width: vars.$breakpoint-tablet) {
+      flex-flow: row-reverse;
+      justify-content: space-between;
+      width: 928px;
+      border-radius: 1rem;
+    }
+
+    > .content {
+      padding: 1.5rem;
+      color: #242742;
+      line-height: 150%;
+      font-weight: 400;
+
+      @media (min-width: vars.$breakpoint-tablet) {
+        align-self: center;
+        margin-left: 3rem;
+        width: 420px;
+      }
+
+      > h1 {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        @media (min-width: vars.$breakpoint-tablet) {
+          font-size: 3.25rem;
+        }
+      }
+
+      > p {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+      .list {
+        display: grid;
+        grid-template-columns: 1fr 8fr;
+        grid-template-rows: auto auto;
+        gap: 0.75rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+
+        @media (min-width: vars.$breakpoint-tablet) {
+          gap: 0.5rem;
+        }
+      }
+      > .email-messages {
+        display: flex;
+        justify-content: space-between;
+        > .standard {
+          margin-top: 1rem;
+          font-size: 0.75rem;
+          font-weight: 700;
+        }
+        > .error-message {
+          display: none; //error message show or hide block or none
+          margin-top: 1rem;
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #ff6155;
+
+          &.error{
+            display: block;
+          }
+        }
+      }
+      > input {
+        margin-top: 0.5rem;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 0.5rem;
+        border-width: 1px;
+        border-color: #19182b44;
+        padding: 1rem;
+
+        &:hover {
+          border-color: #19182b;
+          cursor: pointer;
+
+          &::placeholder {
+            opacity: 1;
+            color: #19182b;
+          }
+        }
+        &::placeholder {
+          font-size: 1rem;
+          opacity: 0.5;
+        }
+        // Error state
+        &.error {
+          border-color: #ff6155;
+          border-width: 2px;
+          background-color: #ff615511;
+          border-style: solid;
+
+          &::placeholder {
+            color: #ff6155;
+          }
+        }
+      }
+
+      > button {
+        background-color: #242742;
+        height: 3.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        border: none;
+        margin-top: 1.5rem;
+
+        &:hover {
+          background-image: linear-gradient(#ff6a3a, #ff527b);
+          box-shadow: 0px 15px 3rem #00000044;
+        }
+
+        > h3 {
+          color: white;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .mobile-success {
+    display: none; //switch input/success
+    width: 375px;
+    flex-direction: column;
+    padding: 1.5rem;
+
+    &.success{
+      display: flex;
+    }
+
+    @media (min-width: vars.$breakpoint-tablet) {
+      width: 504px;
+      height: 520px;
+      padding: 1rem;
+
+    }
+
+    > .content {
+      margin-top: 4rem;
+      margin-bottom: 10rem;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: vars.$breakpoint-tablet) {
+        margin: 1rem 2rem 2rem 1rem;
+      }
+
+      > img {
+        width: 4rem;
+        height: 4rem;
+      }
+      > h1 {
+        margin-top: 2rem;
+        color: #242742;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: vars.$breakpoint-tablet) {
+          margin-top: 2rem;
+          font-size: 3.5rem;
+        }
+      }
+      > p {
+        font-size: 1rem;
+        line-height: 150%;
+        font-weight: 400;
+      }
+    }
+    > button {
+      align-self: flex-end;
+      background-color: #242742;
+      height: 3.5rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      border: none;
+      margin-top: 4rem;
+
+      &:hover {
+        background-image: linear-gradient(#ff6a3a, #ff527b);
+        box-shadow: 0px 15px 3rem #00000044;
+      }
+
+      > h3 {
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
 }
