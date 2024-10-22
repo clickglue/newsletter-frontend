@@ -4,6 +4,7 @@ const input=document.getElementById("input");
 const errorMessage=document.getElementById("error-message");
 const mobile=document.getElementById('mobile');
 const mobileSuccess=document.getElementById('mobile-success');
+const emailFeeback=document.getElementById('email-feedback')
 
 const showError=(e)=>{
     input.classList.add('error')
@@ -18,9 +19,11 @@ submitButton.addEventListener('click', (e)=>{
     }
     input.classList.remove('error')
     errorMessage.classList.remove('error')
+    emailFeeback.innerText=input.value;
     input.value="";
     mobile.classList.add('success')
     mobileSuccess.classList.add('success')
+    
 })
 
 dismiss.addEventListener('click', (e)=>{
