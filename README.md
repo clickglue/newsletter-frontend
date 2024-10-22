@@ -24,12 +24,12 @@ Your users should be able to:
 
 ### Screenshot
 
-![Desktop]()
+![Desktop](./Scherm­afbeelding%202024-10-22%20om%2020.46.21.png)
 
 ### Links
 
-- Solution URL: [Code on Github]()
-- Live Site URL: [Live site on Github Pages]()
+- Solution URL: [Code on Github](https://github.com/clickglue/newsletter-frontend)
+- Live Site URL: [Live site on Github Pages](https://clickglue.github.io/newsletter-frontend/)
 
 ## My process
 
